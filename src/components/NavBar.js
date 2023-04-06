@@ -4,6 +4,7 @@ import {useRouter} from 'next/router'
 import {
 	DribbbleIcon,
 	GithubIcon,
+	LinkedInIcon,
 	PinterestIcon,
 	TwitterIcon
 } from '@/components/Icons'
@@ -70,7 +71,7 @@ const NavBar = () => {
 					whileHover={{y: -2}}
 					whileTap={{scale: 0.9}}
 				>
-					<aedInIcon />
+					<LinkedInIcon />
 				</motion.a>
 				<motion.a
 					href='https://twitter.com'
