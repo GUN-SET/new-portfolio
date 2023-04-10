@@ -25,6 +25,10 @@ export default function Home() {
 					<div className='flex Items-center justify-between w-full'>
 						<div className='w-1/2'>
 							<Image
+								priority
+								sizes='(max-width: 768px) 100vw,
+								(max-width: 1200px) 50vw,
+								50vw'
 								src={profilePic}
 								alt='Andrew'
 								className='w-full h-auto'
@@ -34,9 +38,9 @@ export default function Home() {
 						<div className='w-1/2 flex flex-col items-center self-center'>
 							<AnimatedText
 								text='Turning Vision Into Reality With Code And Design.'
-								className='!text-6xl !text-left'
+								className='!text-6xl !text-left dark:text-light'
 							/>
-							<p className='my-4 text-base font-medium'>
+							<p className='my-4 text-base font-medium dark:text-light'>
 								As a skilled full-stack developer, I am
 								dedicated to turning ideas into innovative web
 								applications. Explore my latest projects and
@@ -47,7 +51,7 @@ export default function Home() {
 								<Link
 									href='/dummy.pdf'
 									target='_blank'
-									className='flex items-center bg-dark text-light p-2.5  px-6 rounded-lg text-lg font-semibold hover:bg-light hover:text-dark border-2 border-solid border-transparent hover:border-dark'
+									className='flex items-center bg-dark dark:bg-light dark:text-dark text-light p-2.5  px-6 rounded-lg text-lg font-semibold hover:bg-light dark:hover:bg-dark hover:text-dark dark:hover:text-white border-2 border-solid border-transparent hover:border-dark dark:hover:border-white'
 									download
 								>
 									Resume
@@ -56,7 +60,7 @@ export default function Home() {
 								<Link
 									href='mailto:androsol.box@gmail.com'
 									target='_blank'
-									className='ml-4 text-lg font-medium capitalize text-dark  underline'
+									className='ml-4 text-lg font-medium capitalize text-dark dark:text-light underline'
 								>
 									Contact
 								</Link>

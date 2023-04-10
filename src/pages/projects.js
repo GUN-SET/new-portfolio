@@ -8,18 +8,28 @@ import project1 from '../../public/images/projects/crypto-screener-cover-image.j
 
 const FeaturedProject = ({type, title, summary, link, github, img}) => {
 	return (
-		<article className='w-full flex items-center justify-between rounded-3xl border border-solid border-dark bg-light shadow-2xl p-12 relative rounded-br-2xl'>
-			<div className='absolute top-0 -right-3 -z-10 w-[100%] h-[103%] rounded-[2.5rem] bg-dark rounded-br-3xl' />
+		<article className='w-full flex items-center justify-between rounded-3xl border border-solid border-dark dark:border-light bg-light dark:bg-dark shadow-2xl p-12 relative rounded-br-2xl dark:text-light'>
+			<div className='absolute top-0 -right-3 -z-10 w-[100%] h-[103%] rounded-[2.5rem] bg-dark dark:bg-light rounded-br-3xl' />
 			<Link
 				href={link}
 				target='_blank'
 				className='w-1/2 cursor-pointer overflow-hidden rounded-lg'
 			>
-				<Image src={img} alt={title} className='w-full h-auto' />
+				<Image
+					src={img}
+					alt={title}
+					className='w-full h-auto'
+					priority
+					sizes='(max-width: 768px) 100vw,
+								(max-width: 1200px) 50vw,
+								50vw'
+				/>
 			</Link>
 
 			<div className='w-1/2 flex flex-col items-start justify-between pl-6'>
-				<span className='text-primary font-medium text-xl'>{type}</span>
+				<span className='text-primary dark:text-primaryDark font-medium text-xl'>
+					{type}
+				</span>
 				<Link
 					href={link}
 					target='_blank'
@@ -29,7 +39,9 @@ const FeaturedProject = ({type, title, summary, link, github, img}) => {
 						{title}
 					</h2>
 				</Link>
-				<p className='my-2 font-medium text-dark'>{summary}</p>
+				<p className='my-2 font-medium text-dark dark:text-light'>
+					{summary}
+				</p>
 				<div className='mt-2 flex items-center'>
 					<Link href={github} target='_blank' className='w-10'>
 						<GithubIcon />
@@ -37,7 +49,7 @@ const FeaturedProject = ({type, title, summary, link, github, img}) => {
 					<Link
 						href={link}
 						target='_blank'
-						className='ml-4 rounded-lg bg-dark text-light p-2 text-lg font-semibold'
+						className='ml-4 rounded-lg bg-dark dark:bg-light text-light dark:text-dark p-2 text-lg font-semibold'
 					>
 						Visit Project
 					</Link>
@@ -49,8 +61,8 @@ const FeaturedProject = ({type, title, summary, link, github, img}) => {
 
 const Project = ({title, type, img, link, github}) => {
 	return (
-		<article className='w-full flex flex-col items-center justify-center rounded-2xl border border-solid border-dark bg-light p-6 relative'>
-			<div className='absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2rem] bg-dark' />
+		<article className='w-full flex flex-col items-center justify-center rounded-2xl border border-solid border-dark dark:border-light bg-light dark:bg-dark p-6 relative dark:text-light'>
+			<div className='absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2rem] bg-dark dark:bg-light' />
 			<Link
 				href={link}
 				target='_blank'
@@ -60,7 +72,9 @@ const Project = ({title, type, img, link, github}) => {
 			</Link>
 
 			<div className='w-full flex flex-col items-start justify-between mt-4'>
-				<span className='text-primary font-medium text-xl'>{type}</span>
+				<span className='text-primary dark:text-primaryDark font-medium text-xl'>
+					{type}
+				</span>
 				<Link
 					href={link}
 					target='_blank'
